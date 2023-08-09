@@ -1,7 +1,6 @@
 package com.aetherteam.aether.client.gui.component.customization;
 
 import com.aetherteam.aether.client.gui.screen.perks.AetherCustomizationsScreen;
-import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;

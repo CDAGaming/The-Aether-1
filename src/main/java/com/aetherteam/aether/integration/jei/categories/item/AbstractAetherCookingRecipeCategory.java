@@ -1,7 +1,6 @@
 package com.aetherteam.aether.integration.jei.categories.item;
 
 import com.aetherteam.nitrogen.integration.jei.categories.AbstractRecipeCategory;
-import com.mojang.blaze3d.vertex.PoseStack;
 import mezz.jei.api.gui.drawable.IDrawable;
 import mezz.jei.api.gui.drawable.IDrawableAnimated;
 import mezz.jei.api.recipe.RecipeType;
