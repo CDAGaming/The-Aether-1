@@ -124,12 +124,12 @@ public class AetherOverlays {
             RenderSystem.enableBlend();
             RenderSystem.disableDepthTest();
             RenderSystem.depthMask(false);
-            RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, timeInPortal);
+            guiGraphics.setColor(1.0F, 1.0F, 1.0F, timeInPortal);
             TextureAtlasSprite textureAtlasSprite = minecraft.getBlockRenderer().getBlockModelShaper().getParticleIcon(AetherBlocks.AETHER_PORTAL.get().defaultBlockState());
             guiGraphics.blit(0, 0, -90, window.getGuiScaledWidth(), window.getGuiScaledHeight(), textureAtlasSprite);
             RenderSystem.depthMask(true);
             RenderSystem.enableDepthTest();
-            RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
+            guiGraphics.setColor(1.0F, 1.0F, 1.0F, 1.0F);
             RenderSystem.disableBlend();
             guiGraphics.pose().popPose();
         }
@@ -197,9 +197,9 @@ public class AetherOverlays {
         RenderSystem.disableDepthTest();
         RenderSystem.depthMask(false);
         RenderSystem.enableBlend();
-        RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, alpha);
+        guiGraphics.setColor(1.0F, 1.0F, 1.0F, alpha);
         guiGraphics.blit(resource, 0, 0, -90, 0.0F, 0.0F, window.getGuiScaledWidth(), window.getGuiScaledHeight(), window.getGuiScaledWidth(), window.getGuiScaledHeight());
-        RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
+        guiGraphics.setColor(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.disableBlend();
         RenderSystem.depthMask(true);
         RenderSystem.enableDepthTest();

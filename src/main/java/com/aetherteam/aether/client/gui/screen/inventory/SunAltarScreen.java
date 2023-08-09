@@ -30,7 +30,7 @@ public class SunAltarScreen extends Screen {
     @Override
     public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
         this.renderBackground(guiGraphics);
-        RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
+        guiGraphics.setColor(1.0F, 1.0F, 1.0F, 1.0F);
         int xSize = 176;
         int ySize = 79;
         int x = (this.width - xSize) / 2;

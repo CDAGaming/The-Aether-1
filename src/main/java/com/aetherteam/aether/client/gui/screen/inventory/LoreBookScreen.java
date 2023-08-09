@@ -151,7 +151,7 @@ public class LoreBookScreen extends AbstractContainerScreen<LoreBookMenu> {
 
     @Override
     protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int x, int y) {
-        RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
+        guiGraphics.setColor(1.0F, 1.0F, 1.0F, 1.0F);
         int xPos = (this.width - this.getXSize()) / 2;
         int yPos = (this.height - (this.getYSize())) / 2;
 

@@ -24,7 +24,7 @@ public abstract class AbstractAetherFurnaceScreen<T extends AbstractAetherFurnac
 
     @Override
     protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int x, int y) {
-        RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
+        guiGraphics.setColor(1.0F, 1.0F, 1.0F, 1.0F);
         int left = this.getGuiLeft();
         int top = this.getGuiTop();
         guiGraphics.blit(this.texture, left, top, 0, 0, this.getXSize(), this.getYSize());
