@@ -2,10 +2,6 @@ package com.aetherteam.aether.client.gui.screen.menu;
 
 import com.aetherteam.aether.client.gui.component.menu.DynamicMenuButton;
 import com.aetherteam.aether.mixin.mixins.client.accessor.TitleScreenAccessor;
-import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.math.Axis;
-import net.minecraft.Util;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.components.Button;
@@ -81,14 +77,7 @@ public class VanillaLeftTitleScreen extends TitleScreen implements TitleScreenBe
             }
             ForgeHooksClient.renderMainMenu(this, guiGraphics, this.font, this.width, this.height, roundedFadeAmount);
             if (titleScreenAccessor.aether$getSplash() != null) {
-                PoseStack poseStack = guiGraphics.pose();
-                poseStack.pushPose();
-                poseStack.translate(250.0F, 50.0F, 0.0F);
-                poseStack.mulPose(Axis.ZP.rotationDegrees(-20.0F));
-                float textSize = 1.8F - Mth.abs(Mth.sin((float) (Util.getMillis() % 1000L) / 1000.0F * Mth.TWO_PI) * 0.1F);
-                //textSize = textSize * 100.0F / (float) (this.font.width(titleScreenAccessor.aether$getSplash()) + 32); poseStack.scale(textSize, textSize, textSize);
-                //GuiComponent.drawCenteredString(poseStack, this.font, titleScreenAccessor.aether$getSplash(), 0, -8, 16776960 | roundedFadeAmount);
-                poseStack.popPose();
+                titleScreenAccessor.aether$getSplash().render(guiGraphics, 254, this.font, roundedFadeAmount);
             }
             TitleScreenBehavior.super.renderRightBranding(guiGraphics, this, this.font, roundedFadeAmount);
         }
@@ -121,26 +110,11 @@ public class VanillaLeftTitleScreen extends TitleScreen implements TitleScreenBe
      * Modified to align the logo to the left instead of the center.
      */
     public void renderLogo(GuiGraphics guiGraphics, float transparency, int height) {
-        RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, transparency);
+        guiGraphics.setColor(1.0F, 1.0F, 1.0F, transparency);
         int xOffset = 11;
         int yOffset = -11;
-        /*
-        if (this.showMinceraftEasterEgg) {
-            GuiComponent.blitOutlineBlack(xOffset, height, (x, y) -> {
-                GuiComponent.blit(poseStack, x, y + yOffset, 0, 0, 99, 44);
-                GuiComponent.blit(poseStack, x + 99, y + yOffset, 129, 0, 27, 44);
-                GuiComponent.blit(poseStack, x + 99 + 26, y + yOffset, 126, 0, 3, 44);
-                GuiComponent.blit(poseStack, x + 99 + 26 + 3, y + yOffset, 99, 0, 26, 44);
-                GuiComponent.blit(poseStack, x + 155, y + yOffset, 0, 45, 155, 44);
-            });
-        } else {
-            GuiComponent.blitOutlineBlack(xOffset, height, (x, y) -> {
-                GuiComponent.blit(poseStack, x, y + yOffset, 0, 0, 155, 44);
-                GuiComponent.blit(poseStack, x + 155, y + yOffset, 0, 45, 155, 44);
-            });
-        }
-        */
-        guiGraphics.blit(LogoRenderer.MINECRAFT_EDITION, xOffset + 88, height + 37 + yOffset, 0.0F, 0.0F, 98, 14, 128, 16);
-        RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
+        guiGraphics.blit(this.showMinceraftEasterEgg ? LogoRenderer.EASTER_EGG_LOGO : LogoRenderer.MINECRAFT_LOGO, xOffset, height + yOffset, 0.0F, 0.0F, 256, 44, 256, 64);
+        guiGraphics.blit(LogoRenderer.MINECRAFT_EDITION, xOffset + 64, height + 37 + yOffset, 0.0F, 0.0F, 128, 14, 128, 16);
+        guiGraphics.setColor(1.0F, 1.0F, 1.0F, 1.0F);
     }
 }
