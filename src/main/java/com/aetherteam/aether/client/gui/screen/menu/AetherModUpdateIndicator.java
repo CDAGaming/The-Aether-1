@@ -8,6 +8,7 @@ import net.minecraftforge.client.loading.ClientModLoader;
 import net.minecraftforge.common.ForgeI18n;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.VersionChecker;
+import net.minecraftforge.fml.loading.FMLConfig;
 import net.minecraftforge.versions.forge.ForgeVersion;
 
 import javax.annotation.Nullable;
@@ -41,7 +42,7 @@ public class AetherModUpdateIndicator extends TitleScreenModUpdateIndicator {
 	 */
 	@Override
 	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
-		if (this.showNotification != null && this.showNotification.shouldDraw() /*&& FMLConfig.runVersionCheck()*/ && Minecraft.getInstance().screen != null) {
+		if (this.showNotification != null && this.showNotification.shouldDraw() && FMLConfig.getBoolConfigValue(FMLConfig.ConfigValue.VERSION_CHECK) && Minecraft.getInstance().screen != null) {
 			this.width = Minecraft.getInstance().screen.width;
 			this.height = Minecraft.getInstance().screen.height;
 			this.font = Minecraft.getInstance().font;
