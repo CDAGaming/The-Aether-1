@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-09T00:07:03.1594751	Recipes
+// 1.20.1	2023-08-23T00:08:08.9606863	Recipes
 ce9ab2e043b1d5d8747a22324584f0bcf4c2b3b1 data/aether/advancements/recipes/building_blocks/aerogel_slab.json
 90208eb708709fa9badd0fc606e5daf5ad91b03b data/aether/advancements/recipes/building_blocks/aerogel_slab_from_aerogel_stonecutting.json
 6845688223f47a89fd0d51f6e6d1de155f983710 data/aether/advancements/recipes/building_blocks/aerogel_stairs.json
@@ -234,6 +234,7 @@ c6090c61a3f76679e32982e4098883f5c66d526a data/aether/advancements/recipes/redsto
 b90fc6d15013e0e839581d6f2eda4671c07d8777 data/aether/advancements/recipes/redstone/skyroot_button.json
 18c647a7d9ac3cf45ca439b8763fb8d23d3e6e39 data/aether/advancements/recipes/redstone/skyroot_door.json
 baf87347938303e71d9e230e0314fe1a5ea75d60 data/aether/advancements/recipes/redstone/skyroot_fence_gate.json
+4c973db67cdd216d52c07bbad7c719f1efe65e40 data/aether/advancements/recipes/redstone/skyroot_lectern.json
 0340168b6cb6b4650403b6e39d974b2dd0e45f3a data/aether/advancements/recipes/redstone/skyroot_note_block.json
 70c51a9b3f6a540d3dfc1c61535d6593141aab97 data/aether/advancements/recipes/redstone/skyroot_piston.json
 a39056c73ada8f0abe4a902132381e39f1c4b221 data/aether/advancements/recipes/redstone/skyroot_pressure_plate.json

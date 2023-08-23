@@ -114,7 +114,7 @@ public class HammerProjectile extends ThrowableProjectile {
         super.onHitBlock(result);
         List<Entity> list = this.level().getEntities(this, this.getBoundingBox().inflate(5.0));
         for (Entity target : list) {
-            if (!this.getLevel().isClientSide()) {
+            if (!this.level().isClientSide()) {
                 this.launchTarget(target);
             } else {
                 PacketRelay.sendToServer(AetherPacketHandler.INSTANCE, new HammerProjectileLaunchPacket(target.getId(), this.getId()));
